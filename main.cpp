@@ -1,61 +1,80 @@
 #include <iostream>
 using namespace std;
 
-// Problem 1a:
-/*int sumUpTo100() {
+// Problem 1a
+/*void print() {
     int sum = 0;
     for (int i = 1; i <= 100; i++) {
         sum += i;
     }
-    return sum;
+    cout << "Sum up to 100: " << sum << endl;
 }*/
 
-// Problem 1b:
-/*int sumUpToN(int n) {
-    int sum = 0;
-    int i = 1;
+// Problem 1b
+/*void doMath() {
+    int n = 10, sum = 0, i = 1;
     while (i <= n) {
         sum += i;
         i++;
     }
-    return sum;
+    cout << "Sum up to " << n << ": " << sum << endl;
 }*/
 
-// Problem 2a:
-/*bool isPrime(int num) {
-    if (num <= 1) return false;
+// Problem 2a
+/*void Print() {
+    int num = 29;
+    bool print = true;
     for (int i = 2; i * i <= num; i++) {
-        if (num % i == 0) return false;
+        if (num % i == 0) {
+            print = false;
+            break;
+        }
     }
-    return true;
-}
+    if (print) {
+        cout << num << " is prime." << endl;
+    } else {
+        cout << num << " is not prime." << endl;
+    }
+}*/
 
-void first10Primes() {
+// Problem 2b
+/*void print() {
     int count = 0, num = 2;
     while (count < 10) {
-        if (isPrime(num)) {
+        bool print = true;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                print = false;
+                break;
+            }
+        }
+        if (print) {
             cout << num << " ";
             count++;
         }
         num++;
     }
     cout << endl;
+}
+
+int main() {
+    print();
+    return 0;
 }*/
+
 
 // Problem 3:
-/*void collatzSequence(int n) {
-    while (n != 1) {
-        cout << n << ", ";
-        if (n % 2 == 0)
-            n /= 2;
-        else
-            n = 3 * n + 1;
-    }
-    cout << 1 << endl;
+/*void doMath(int n) {
+    print(n);
+    if (n == 1) return;
+    print(',');
+    if (n % 2 == 0) doMath(n / 2);
+    else doMath(3 * n + 1);
 }*/
 
+
 // Problem 5:
-/*void extractDigits(int n) {
+/*void print (int n) {
     while (n > 0) {
         cout << n % 10 << " ";
         n /= 10;
@@ -64,110 +83,128 @@ void first10Primes() {
 }*/
 
 // Problem 6:
-/*int gcd(int a, int b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
+/*int add(int n) {
+    if (n == 0) return 0;
+    return 1 + add(n / 10);
 }*/
 
 // Problem 7:
-/*void sumUntilExceeds100() {
-    int sum = 0, count = 0, num;
-    while (sum <= 100) {
-        cout << "Enter a number: ";
-        cin >> num;
-        sum += num;
-        count++;
+/*void doMathSum(int sum, int count) {
+    int n;
+    cin >> n;
+    if (sum + n > 100) {
+        print(sum);
+        return sum;
     }
-    cout << "Sum exceeded 100! Total sum: " << sum << "\nTotal numbers entered: " << count << endl;
-}*/
+    return doMathSum(sum + n, count + 1);*/
 
 // Problem 8:
-/*void bankingWithdrawalSystem() {
-    int balance = 500;
-    int withdrawal;
-    while (balance > 0) {
-        cout << "Your balance: $" << balance << endl;
-        cout << "Enter withdrawal amount (or 0 to cancel): ";
-        cin >> withdrawal;
-        if (withdrawal == 0) break;
-        if (withdrawal > balance)
-            cout << "Insufficient funds!" << endl;
-        else
-            balance -= withdrawal;
+/*void void doMath(int balance) {
+    if (balance == 0) {
+        print(balance);
+        return;
     }
-    cout << "Remaining balance: $" << balance << endl;
+    int withdraw;
+    cin >> withdraw;
+    if (withdraw == 0) return;
+    if (withdraw > balance) {
+        print('E'); // 'E' for error message
+    } else {
+        balance -= withdraw;
+        print(balance);
+    }
+    doMath(balance);
 }*/
 
 // Problem 9:
-/*void repeatUntilYN() {
-    char response;
-    do {
-        cout << "Enter 'Y' or 'N': ";
-        cin >> response;
-    } while (response != 'Y' && response != 'N');
-    cout << "Accepted" << endl;
+/*void doMath() {
+    char c;
+    cin >> c;
+    if (c == 'Y' || c == 'N') {
+        print('A');
+        return;
+    }
+    print('I');
+    doMathYN();
+}
+
+int main() {
+    int n;
+    cin >> n;
+    doMath(n);
+    return 0;
 }*/
 
 // Problem 10:
-/*void atmMenuSystem() {
+/*void print() {
     int choice;
-    do {
-        cout << "1: Withdraw\n2: Deposit\n3: Check Balance\n4: Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-        if (choice == 1) cout << "Processing withdrawal...\n";
-        else if (choice == 2) cout << "Processing deposit...\n";
-        else if (choice == 3) cout << "Checking balance...\n";
-        else if (choice == 4) cout << "Goodbye!\n";
-        else cout << "Invalid choice!\n";
-    } while (choice != 4);
+    cout << "1: Withdraw\n2: Deposit\n3: Check Balance\n4: Exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == 4) {
+        cout << "Goodbye!" << endl;
+        return;
+    }
+
+    if (choice == 1) cout << "Processing withdrawal...\n";
+    else if (choice == 2) cout << "Processing deposit...\n";
+    else if (choice == 3) cout << "Checking balance...\n";
+    else cout << "Invalid choice!\n";
+
+    print();
+}
+
+int main() {
+    print();
+    return 0;
 }*/
+
 
 // Problem 11:
-/*void menuDrivenCalculator() {
+/*void doMath() {
     int choice, a, b;
-    do {
-        cout << "1: Add\n2: Subtract\n3: Multiply\n4: Divide\n5: Exit\nEnter your choice: ";
-        cin >> choice;
-        if (choice >= 1 && choice <= 4) {
-            cout << "Enter two numbers: ";
-            cin >> a >> b;
-        }
-        switch (choice) {
-            case 1: cout << "Result: " << a + b << endl; break;
-            case 2: cout << "Result: " << a - b << endl; break;
-            case 3: cout << "Result: " << a * b << endl; break;
-            case 4: if (b != 0) cout << "Result: " << a / b << endl; else cout << "Cannot divide by zero!\n"; break;
-            case 5: cout << "Goodbye!\n"; break;
-            default: cout << "Invalid choice!\n";
-        }
-    } while (choice != 5);
+    cout << "1: Add\n2: Subtract\n3: Multiply\n4: Divide\n5: Exit\nEnter your choice: ";
+    cin >> choice;
+    if (choice == 5) {
+        cout << "Goodbye!" << endl;
+        return;
+    }
+    if (choice >= 1 && choice <= 4) {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+    }
+    doMath(); 
+}
+int main() {
+    doMath();
+    return 0;
 }*/
 
+
 // Problem 12:
-/*void passwordAuthentication() {
+/*#include <iostream>
+using namespace std;
+
+int main() {
     string password = "1234";
     string input;
     int attempts = 0;
-    do {
+
+    while (attempts < 3) {
         cout << "Enter password: ";
         cin >> input;
         attempts++;
+
         if (input == password) {
             cout << "Access Granted" << endl;
-            return;
+            return 0;
         } else {
             cout << "Incorrect" << endl;
         }
-    } while (attempts < 3);
+    }
+
     cout << "Access Denied" << endl;
+    return 0;
 }*/
 
-// Main function
-int main() {
-    return 0;
-}
