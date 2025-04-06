@@ -56,12 +56,10 @@ using namespace std;
     }
     cout << endl;
 }
-
 int main() {
     print();
     return 0;
 }*/
-
 
 // Problem 3:
 /*void doMath(int n) {
@@ -71,7 +69,6 @@ int main() {
     if (n % 2 == 0) doMath(n / 2);
     else doMath(3 * n + 1);
 }*/
-
 
 // Problem 5:
 /*void print (int n) {
@@ -127,7 +124,6 @@ int main() {
     print('I');
     doMathYN();
 }
-
 int main() {
     int n;
     cin >> n;
@@ -146,15 +142,12 @@ int main() {
         cout << "Goodbye!" << endl;
         return;
     }
-
     if (choice == 1) cout << "Processing withdrawal...\n";
     else if (choice == 2) cout << "Processing deposit...\n";
     else if (choice == 3) cout << "Checking balance...\n";
     else cout << "Invalid choice!\n";
-
     print();
 }
-
 int main() {
     print();
     return 0;
@@ -190,12 +183,10 @@ int main() {
     string password = "1234";
     string input;
     int attempts = 0;
-
     while (attempts < 3) {
         cout << "Enter password: ";
         cin >> input;
         attempts++;
-
         if (input == password) {
             cout << "Access Granted" << endl;
             return 0;
@@ -203,7 +194,6 @@ int main() {
             cout << "Incorrect" << endl;
         }
     }
-
     cout << "Access Denied" << endl;
     return 0;
 }*/
