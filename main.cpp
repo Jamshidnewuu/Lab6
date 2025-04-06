@@ -96,19 +96,21 @@ int main() {
     return doMathSum(sum + n, count + 1);*/
 
 // Problem 8:
-/*void void doMath(int balance) {
+/*void doMath(int balance) {
     if (balance == 0) {
-        print(balance);
+        cout << balance << endl;
         return;
     }
     int withdraw;
     cin >> withdraw;
-    if (withdraw == 0) return;
+    if (withdraw == 0) {
+    return;
+    }
     if (withdraw > balance) {
-        print('E'); // 'E' for error message
+        cout << 'E' << endl;
     } else {
         balance -= withdraw;
-        print(balance);
+        cout << balance << endl;
     }
     doMath(balance);
 }*/
@@ -142,59 +144,37 @@ int main() {
         cout << "Goodbye!" << endl;
         return;
     }
-    if (choice == 1) cout << "Processing withdrawal...\n";
-    else if (choice == 2) cout << "Processing deposit...\n";
-    else if (choice == 3) cout << "Checking balance...\n";
-    else cout << "Invalid choice!\n";
+    if (choice == 1) {
+    cout << "Processing withdrawal" << endl; 
+    } else if (choice == 2) {
+    cout << "Processing deposit" << endl:
+    } else if (choice == 3) {
+    cout << "Checking balance" << endl; 
+    } else {
+    cout << "Invalid choice!\n";
+    }
     print();
 }
 int main() {
     print();
     return 0;
 }*/
-
-
-// Problem 11:
-/*void doMath() {
-    int choice, a, b;
-    cout << "1: Add\n2: Subtract\n3: Multiply\n4: Divide\n5: Exit\nEnter your choice: ";
-    cin >> choice;
-    if (choice == 5) {
-        cout << "Goodbye!" << endl;
-        return;
-    }
-    if (choice >= 1 && choice <= 4) {
-        cout << "Enter two numbers: ";
-        cin >> a >> b;
-    }
-    doMath(); 
-}
-int main() {
-    doMath();
-    return 0;
-}*/
-
 
 // Problem 12:
-/*#include <iostream>
-using namespace std;
-
-int main() {
-    string password = "1234";
-    string input;
-    int attempts = 0;
-    while (attempts < 3) {
-        cout << "Enter password: ";
-        cin >> input;
-        attempts++;
-        if (input == password) {
-            cout << "Access Granted" << endl;
-            return 0;
+/*void printNTimes (int n) {
+    string number;
+    for (int i = 0; i < n; i++) {
+        cout << "Enter the password: ";
+        cin >> number;
+        if (number == "1234") {
+            cout << "Correct!" << endl;
+            break;
         } else {
-            cout << "Incorrect" << endl;
+            cout << "Try again"<< endl;
         }
     }
-    cout << "Access Denied" << endl;
-    return 0;
+}
+int main () {
+    printNTimes(3);
 }*/
 
